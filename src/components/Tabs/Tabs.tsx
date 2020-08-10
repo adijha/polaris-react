@@ -4,6 +4,7 @@ import {HorizontalDotsMinor} from '@shopify/polaris-icons';
 import {classNames} from '../../utilities/css';
 import {Icon} from '../Icon';
 import {Popover} from '../Popover';
+import {Badge} from '../Badge';
 import {useI18n} from '../../utilities/i18n';
 import {useFeatures} from '../../utilities/features';
 
@@ -207,6 +208,11 @@ class TabsInner extends PureComponent<CombinedProps, State> {
   private renderTabMarkup = (tab: TabDescriptor, index: number) => {
     const {selected} = this.props;
     const {tabToFocus} = this.state;
+    const badgeMarkup = tab.badge && (
+      <span className={styles.BadgeWrapper}>
+        <Badge status={tab.badge.status}>{tab.badge.content}</Badge>
+      </span>
+    );
 
     return (
       <Tab
@@ -221,6 +227,7 @@ class TabsInner extends PureComponent<CombinedProps, State> {
         url={tab.url}
       >
         {tab.content}
+        {badgeMarkup}
       </Tab>
     );
   };

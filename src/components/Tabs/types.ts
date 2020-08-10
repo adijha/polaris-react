@@ -1,4 +1,6 @@
-export interface TabDescriptor {
+import {BadgeAction} from 'types';
+
+export interface TabDescriptor extends BadgeAction {
   /** A unique identifier for the tab */
   id: string;
   /** A destination to link to */

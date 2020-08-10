@@ -299,6 +299,10 @@ $focus-state-box-shadow-color: rgba(0, 0, 0, 0.8);
   height: 0;
 }
 
+.BadgeWrapper {
+  margin-left: spacing(tight);
+}
+
 // stylelint-disable selector-max-class, selector-max-combinators, selector-max-specificity
 .newDesignLanguage {
   .Title {
